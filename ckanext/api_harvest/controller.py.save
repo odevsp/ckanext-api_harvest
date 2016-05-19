@@ -1,0 +1,62 @@
+qfrom logging import getLogger
+from ckan.lib.base import request, BaseController, abort, json, c
+from ckan.plugins import toolkit
+
+import ckan.plugins as p
+import json
+import pylons.config as config
+
+import subprocess
+import shlex
+import os, sys
+
+log = getLogger(__name__)
+
+#import sys;sys.path.append(r'/srv_apl/opendata/ckan/default/lib/python2.7/site-packages')
+#import pydevd;pydevd.settrace('7.115.100.56', port=5678)
+
+class Resource_api_harvestController(BaseController):
+
+	def stop_job(self):
+                print "*** entra en controlador ***"
+
+		if not request.method == 'GET':
+			abort(405, 'Method not allowed')
+
+                print "*** despues check metodo ***"
+
+		if not c.userobj:
+			abort(403, 'Forbidden, need user login')
+
+		if not c.userobj.sysadmin:
+			abort(403, 'Forbidden, need API-Key')
+
+                print "*** despues primeras comprobaciones ***"
+
+#		content_type = request.headers.get('Content-Type', '')
+
+#		default_data = {
+#	            'job_name': toolkit.request.params.get('job_name'),
+#      		}
+                print "*** antes recuperar param ***"
+
+		job_name = request.params.get('job_name','')
+                print "*** param job_name *** = " + repr(job_name)
+                print "*** path_entero *** = " + repr('/srv_apl/opendata/ckan/default/bin/paster --plugin=ckanext-harvest harvester job_abort ' + job_name  + ' --config=/srv_apl..')
+
+                if job_name == '':
+                        abort(400, 'Bad Request, need job_name param')
+
+#		print "*** situarse enc arpeta ***"			
+#		os.chdir("/srv_apl/opendata/ckan/default/src/ckan")
+#                print "*** antes llamada script ***"
+#                os.system("/srv_apl/opendata/ckan/default/bin/paster --plugin=ckanext-harvest harvester job_abort terrasit --config=/srv_apl/opendata/ckan/default/config/production.ini")
+#                print "*** despues llamada a script ***"
+
+#                os.system("/srv_apl/opendata/ckan/default/bin/python /home/ckan/test_python/test_python2.py")
+#		os.system("/bin/bash /home/ckan/test_python/test.sh param1 param2")
+#		subprocess.call(shlex.split('/home/ckan/test_python/test.sh param1 param2'))
+#		subprocess.Popen(['sh','/home/ckan/test_python/test.sh','shell=True'])
+
+                subprocess.Popen(shlex.split('/srv_apl/opendata/ckan/default/bin/paster --plugin=ckanext-harvest harvester job_abort ' + job_name  + ' --config=/srv_apl/opendata/ckan/default/config/production.ini'), cwd='/srv_apl/opendata/ckan/default/src/ckan')
+#		file_route = config.get('ckan.api_harvest.route_file') 
