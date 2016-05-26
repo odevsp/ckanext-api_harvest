@@ -25,6 +25,9 @@ class Api_HarvestPlugin(plugins.SingletonPlugin):
 	map.connect('/api_harvest/create_job',
 		controller='ckanext.api_harvest.controller:Resource_api_harvestController',
 		action='create_job')
+        map.connect('/api_harvest/create_job_all',
+                    controller='ckanext.api_harvest.controller:Resource_api_harvestController',
+                    action='create_job_all')
 	map.connect('/api_harvest/run_job',
 		controller='ckanext.api_harvest.controller:Resource_api_harvestController',
 		action='run_job')
