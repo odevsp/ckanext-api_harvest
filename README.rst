@@ -1,33 +1,3 @@
-.. You should enable this project on travis-ci.org and coveralls.io to make
-   these badges work. The necessary Travis and Coverage config files have been
-   generated for you.
-
-.. image:: https://travis-ci.org/odevsp/ckanext-api_harvest.svg?branch=master
-    :target: https://travis-ci.org/odevsp/ckanext-api_harvest
-
-.. image:: https://coveralls.io/repos/odevsp/ckanext-api_harvest/badge.png?branch=master
-  :target: https://coveralls.io/r/odevsp/ckanext-api_harvest?branch=master
-
-.. image:: https://pypip.in/download/ckanext-api_harvest/badge.svg
-    :target: https://pypi.python.org/pypi//ckanext-api_harvest/
-    :alt: Downloads
-
-.. image:: https://pypip.in/version/ckanext-api_harvest/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-api_harvest/
-    :alt: Latest Version
-
-.. image:: https://pypip.in/py_versions/ckanext-api_harvest/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-api_harvest/
-    :alt: Supported Python versions
-
-.. image:: https://pypip.in/status/ckanext-api_harvest/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-api_harvest/
-    :alt: Development Status
-
-.. image:: https://pypip.in/license/ckanext-api_harvest/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-api_harvest/
-    :alt: License
-
 =============
 ckanext-api_harvest
 =============
@@ -83,6 +53,7 @@ Config Settings
 
 Specify the needed config settings, for example:
     ckan.api_harvest.config_file = /etc/ckan/default/production.ini
+    
     ckan.api_harvest.virtual_evnvironment_route = /etc/ckan/default
     
 
