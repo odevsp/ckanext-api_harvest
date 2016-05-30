@@ -2,18 +2,15 @@
 ckanext-api_harvest
 =============
 
-.. Put a description of your extension here:
-   What does it do? What features does it have?
-   Consider including some screenshots or embedding a video!
+..
 This CKAN extension enable an API to execute some harvest methods of Harvest 
 extension to stop, create or run harvest jobs.
-
 
 ------------
 Requirements
 ------------
 
-Tested in CKAN 2.4.3 version.
+Tested in CKAN 2.3.3 and 2.4.3 version.
 
 
 ------------
@@ -83,11 +80,12 @@ http://ckan_url/api_harvest/stop_job?job_name=xxxxx
 -Create a job
 http://ckan_url/api_harvest/create_job?job_name=xxxxx
 
+-Create job for all sources
+http://ckan_url/api_harvest/create_job_all
+
 -Run jobs:
 http://ckan_url/api_harvest/run_job
 
-Only admin user using API key can call this methods.    
-    
-
+Only admin user using API key can call this methods.
 
 
