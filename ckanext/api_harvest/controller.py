@@ -34,13 +34,13 @@ class Resource_api_harvestController(BaseController):
 			log.info("API harvest - error detected, need job_name param in get parameter")
 			abort(400, 'Bad Request, need job_name param')
 
-		config_file = config.get('ckan.api_harvest.config_file','')
+		config_file = config.get('ckan.api_basic.config_file','')
 		
 		if config_file == '':
 			log.info("API harvest - error detected, config_file parameter not defined in configuration file")
 			abort(403, 'Forbidden, config_file parameter not defined in configuration file')
 		
-		ve_route =  config.get('ckan.api_harvest.virtual_evnvironment_route')
+		ve_route =  config.get('ckan.api_basic.virtual_evnvironment_route')
 
 		if ve_route == '':
 			log.info("API harvest - error detected, ve_route parameter not defined in configuration file")
@@ -73,13 +73,13 @@ class Resource_api_harvestController(BaseController):
 			log.info("API harvest - error detected, need job_name param in get parameter")
 			abort(400, 'Bad Request, need job_name param')
 
-		config_file = config.get('ckan.api_harvest.config_file','')
+		config_file = config.get('ckan.api_basic.config_file','')
 		
 		if config_file == '':
 			log.info("API harvest - error detected, config_file parameter not defined in configuration file")
 			abort(403, 'Forbidden, config_file parameter not defined in configuration file')
 		
-		ve_route =  config.get('ckan.api_harvest.virtual_evnvironment_route')
+		ve_route =  config.get('ckan.api_basic.virtual_evnvironment_route')
 
 		if ve_route == '':
 			log.info("API harvest - error detected, ve_route parameter not defined in configuration file")
@@ -105,13 +105,13 @@ class Resource_api_harvestController(BaseController):
 			log.info("API harvest - error detected, need API-Key")
 			abort(403, 'Forbidden, need API-Key')
 
-		config_file = config.get('ckan.api_harvest.config_file','')
+		config_file = config.get('ckan.api_basic.config_file','')
 		
 		if config_file == '':
 			log.info("API harvest - error detected, config_file parameter not defined in configuration file")
 			abort(403, 'Forbidden, config_file parameter not defined in configuration file')
 		
-		ve_route =  config.get('ckan.api_harvest.virtual_evnvironment_route')
+		ve_route =  config.get('ckan.api_basic.virtual_evnvironment_route')
 
 		if ve_route == '':
 			log.info("API harvest - error detected, ve_route parameter not defined in configuration file")
@@ -137,13 +137,13 @@ class Resource_api_harvestController(BaseController):
 			log.info("API harvest - error detected, need API-Key")
 			abort(403, 'Forbidden, need API-Key')
 
-		config_file = config.get('ckan.api_harvest.config_file','')
+		config_file = config.get('ckan.api_basic.config_file','')
 		
 		if config_file == '':
 			log.info("API harvest - error detected, config_file parameter not defined in configuration file")
 			abort(403, 'Forbidden, config_file parameter not defined in configuration file')
 	
-		ve_route =  config.get('ckan.api_harvest.virtual_evnvironment_route')
+		ve_route =  config.get('ckan.api_basic.virtual_evnvironment_route')
 
 		if ve_route == '':
 			log.info("API harvest - error detected, ve_route parameter not defined in configuration file")
